@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    box-sizing: border-box;
+    background-color: #575757;
+    font-family: Arial, Helvetica, sans-serif;
+
+    .list-container {
+        padding: 20px;
+        border-radius: 25px;
+        background-color: #fff;
+
+        .top-content {
+
+            .top-text {
+                text-align: center;
+            }
+            .inputs {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: #edeef0;
+                border-radius: 15px;
+                padding-left: 20px;
+
+                input {
+                    padding: 10px;
+                    flex: 1;
+                    border: none;
+                    outline: none;
+                    background-color: transparent;
+                }
+
+                button {
+                    flex: 1;
+                    padding: 10px 20px;
+                    border-radius: 15px;
+                    border: none;
+                    color: white;
+                    cursor: pointer;
+                    font: bold 1em Helvetica;
+                    background-color: orange;
+                    transition: 200ms ease;
+
+                    &:hover {
+                        background-color: rgb(231, 150, 0);
+                    }
+                }
+            }
+        }
+
+        .alt-content {
+            #task-container {
+                    display: flex;
+                    align-items: flex-start;
+                    flex-direction: column;
+                    li {
+                        display: flex;
+                        justify-content: space-between;
+                        width: 90%;
+                        position: relative;
+                        list-style: none;
+                        padding: 10px;
+                        cursor: pointer;
+                        user-select: none;
+
+                        &.checked {
+                            color: #555;
+                            text-decoration: line-through;
+
+                            &:before {
+                                background: url('assets/checked.png') center/cover;
+                            }
+                        }
+
+                        span {
+                            position: absolute;
+                            text-align: center;
+                            bottom: -1px;
+                            right: 0;
+                            font-size: 1.5em;
+                            border-radius: 50%;
+                            padding: 5px 8px;
+                            transition: 200ms ease;
+
+                            &.checked {
+                                text-decoration: none!important;
+                            }
+                            
+                            &:hover {
+                                background-color: #cfcfcf;
+                            }
+                        }
+                    }
+                    li:before {
+                        position: absolute;
+                        content: '';
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 50%;
+                        background: url('assets/unchecked.png') center/cover;
+                        top: 12px;
+                        left: -30px;
+                        bottom: 2px;
+                    }
+                
+            }
+        }
+
+    }
+}
